@@ -1,15 +1,4 @@
 
-
-html {
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-body {
-  margin: 0;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -31,8 +20,8 @@ body {
 .nav {
   &__list {
     display: flex;
-    margin: 0;
-    padding: 0;
+    margin: $nav-link-margin;
+    padding: $nav-link-padding;
     list-style: none;
   }
 
@@ -44,12 +33,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
+    height: $nav-link-heght;
     color: $color-main;
     font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
+    transition: color $transform-transition;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: $navigation-hover-color;
   }
 
   &__link.is-active {
@@ -62,13 +57,10 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 4px;
-    border-radius: 8px;
+    height: $nav-link-active-line-height;
+    border-radius: $nav-link-active-line-border-radius;
     background-color: $navigation-hover-color;
   }
 
-  &__link:hover,
-  &__link:active {
-    color: $navigation-hover-color;
-  }
+
 }
