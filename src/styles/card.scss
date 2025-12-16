@@ -2,15 +2,28 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: $card-background-color;
   width: $card-width;
   border: 1px solid;
   border-color: $color-border;
   border-radius: $card-radius;
-  transition: transform 300ms;
+  transition: transform $transform-transition;
 
   &:hover {
     transform: scale(1.2);
+  }
+
+  &__title {
+    font-weight: 500;
+    line-height: 18px;
+    color: $color-main;
+    font-size: 12px;
+    margin: 40px 16px 0;
+    transition: color $transform-transition;
+  }
+
+  &:hover &__title {
+    color: $hover-title-color;
   }
 
   &__image {
@@ -24,20 +37,7 @@
     margin: 32px 19px 0;
   }
 
-  &__description {
-    font-weight: 500;
-    line-height: 18px;
-    color: $color-main;
-    font-size: 12px;
-    margin: 40px 16px 0;
-    transition: color 300ms;
-
-    &:hover {
-      color: #34568b;
-    }
-  }
-
-  &__description::after {
+  &__title::after {
     line-height: 14px;
     font-weight: 400;
     content: 'Product code: 195434';
@@ -70,7 +70,7 @@
     text-decoration: none;
     font-size: 14px;
     margin: 16px;
-    color: #fff;
+    color: $button-text-color;
     display: flex;
     background-color: $color-accent;
     width: 166px;
@@ -83,12 +83,12 @@
     border: 1px solid transparent;
     cursor: pointer;
     transition:
-      background-color 300ms,
-      border-color 300ms,
-      color 300ms;
+      background-color $transform-transition,
+      border-color $transform-transition,
+      color $transform-transition;
 
     &:hover {
-      background-color: #fff;
+      background-color: $button-hover-card;
       border-color: $color-accent;
       color: $color-accent;
     }
